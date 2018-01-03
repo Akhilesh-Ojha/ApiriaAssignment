@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+<body>
+        <% result.forEach(function (t) { %>
+        <div class="card" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><%= t.name%></li>
+                <li class="list-group-item"><%= t.roll%></li>
+                <a class="btn btn-xs btn-warning" href="/<%= t._id %>/edit">Edit</a>
+                <form id="delete-form" style="display: inline" action="/<%= t._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-xs btn-danger">Delete</button>
+                </form>
+            </ul>
+        </div>
+        <%})%>
+</body>
+</html>
+
+
+
